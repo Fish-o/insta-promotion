@@ -1,18 +1,18 @@
 import React from "react";
-import { spring, useCurrentFrame, useVideoConfig } from "remotion";
 import { FONT_FAMILY } from "./constants";
 
 const title: React.CSSProperties = {
   fontFamily: FONT_FAMILY,
-  fontWeight: "bold",
-  fontSize: 100,
+  fontWeight: "500",
+  color: "white",
+  fontSize: 110,
   textAlign: "center",
-  position: "absolute",
-  bottom: 160,
+  margin: 15,
   width: "100%",
 };
 
 const word: React.CSSProperties = {
+  color: "white",
   marginLeft: 10,
   marginRight: 10,
   display: "inline-block",
@@ -20,39 +20,16 @@ const word: React.CSSProperties = {
 
 export const Title: React.FC<{
   readonly titleText: string;
-  readonly titleColor: string;
-}> = ({ titleText, titleColor }) => {
-  const videoConfig = useVideoConfig();
-  const frame = useCurrentFrame();
-
-  const words = titleText.split(" ");
-
+}> = ({ titleText }) => {
   return (
-    <h1 style={title}>
-      {words.map((t, i) => {
-        const delay = i * 5;
-
-        const scale = spring({
-          fps: videoConfig.fps,
-          frame: frame - delay,
-          config: {
-            damping: 200,
-          },
-        });
-
-        return (
-          <span
-            key={t}
-            style={{
-              ...word,
-              color: titleColor,
-              transform: `scale(${scale})`,
-            }}
-          >
-            {t}
-          </span>
-        );
-      })}
-    </h1>
+    <div
+      style={{
+        width: "100%",
+        backgroundColor: "#2450A8",
+        boxShadow: "0px 0px 30px rgba(0, 0, 0, 0.5)",
+      }}
+    >
+      <h1 style={{ ...title, ...word }}> {titleText}</h1>
+    </div>
   );
 };

@@ -2,4 +2,7 @@
 
 export const COLOR_1 = "#86A8E7";
 
-export const FONT_FAMILY = "SF Pro Text, Helvetica, Arial, sans-serif";
+export const FONT_FAMILY = "Gill Sans";
+
+export const SLIDE_IN_INTERVAL = 25;
+export const SLIDE_IN_DURATION = 30;
