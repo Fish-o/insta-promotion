@@ -8,11 +8,13 @@ import { Title } from "./HelloWorld/Title";
 import { Activity } from "./Root";
 import { ActivityList } from "./ActivityList";
 
-export type HelloWorldProps = {
+export type ActivityCompositionProps = {
   readonly data: Activity[];
 };
 
-export const MainComposition: React.FC<HelloWorldProps> = ({ data }) => {
+export const ActivityComposition: React.FC<ActivityCompositionProps> = ({
+  data,
+}) => {
   const frame = useCurrentFrame();
   const { durationInFrames } = useVideoConfig();
 

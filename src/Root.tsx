@@ -1,5 +1,5 @@
 import "./index.css";
-import { MainComposition } from "./HelloWorld";
+import { ActivityComposition } from "./ActivityComposition";
 import { Composition } from "remotion";
 import { gql, request } from "graphql-request";
 
@@ -7,6 +7,8 @@ import moment from "moment";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { loadFont } from "@remotion/fonts";
 import { staticFile } from "remotion";
+import { StartComposition } from "./StartComposition";
+import { WEEK } from "./HelloWorld/constants";
 
 const queryClient = new QueryClient();
 
@@ -45,8 +47,8 @@ export const RemotionRoot: React.FC = () => {
         <Composition
           // You can take the "id" to render a video:
           // npx remotion render HelloWorld
-          id="HelloWorld"
-          component={MainComposition}
+          id="ActivityComposition"
+          component={ActivityComposition}
           durationInFrames={fps * 6}
           fps={fps}
           width={1080}
@@ -64,6 +66,21 @@ export const RemotionRoot: React.FC = () => {
                 data: res,
               },
             };
+          }}
+        />
+        <Composition
+          // You can take the "id" to render a video:
+          // npx remotion render HelloWorld
+          id="StartComposition"
+          component={StartComposition}
+          durationInFrames={fps * 3.5}
+          fps={fps}
+          width={1080}
+          height={1920}
+          // You can override these props for each render:
+          // https://www.remotion.dev/docs/parametrized-rendering
+          defaultProps={{
+            week: WEEK,
           }}
         />
       </QueryClientProvider>
@@ -102,7 +119,7 @@ loadFont({
 });
 
 async function fetchActivities(): Promise<Activity[]> {
-  const week = moment("2026W39");
+  const week = moment("2026W" + WEEK);
 
   const start = week.startOf("week").toISOString();
   const end = week.endOf("week").toISOString();
