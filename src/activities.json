@@ -1,0 +1,30 @@
+[
+  {
+    "summary": "Board Change GMM",
+    "location": "Spiegel 3",
+    "begin": "2026-09-01T18:00:00+00:00",
+    "end": "2026-09-01T21:59:00+00:00",
+    "imageIcon": "",
+    "enrollment": true,
+    "absoluteUrl": "/activities/7914/",
+    "activityLabel": {
+      "name": "General",
+      "color": "372652"
+    },
+    "price": "0.00"
+  },
+  {
+    "summary": "Freshmen Bowling",
+    "location": "Colloseum 72, Enschede",
+    "begin": "2026-09-03T19:00:00+00:00",
+    "end": "2026-09-03T20:00:00+00:00",
+    "imageIcon": "activities/icon/Sjaarsbowlen_-_5_vBCvIDR_9ZDwuub.jpg",
+    "enrollment": true,
+    "absoluteUrl": "/activities/7925/",
+    "activityLabel": {
+      "name": "Social",
+      "color": "099A2B"
+    },
+    "price": "1.00"
+  }
+]

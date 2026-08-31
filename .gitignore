@@ -9,3 +9,4 @@ out
 *.ttf
 .agents
 skills-lock.json
+build
