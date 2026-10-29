@@ -81,11 +81,13 @@ export const ActivityList: React.FC<{ readonly activities: Activity[] }> = ({
           <div key={day}>
             <h2 style={{ ...dayStyle, ...titleStyle }}>{day}</h2>
             {dayActivities.map((activity, index) => (
-              <ActivityItem
-                key={index}
-                activity={activity}
-                delay={(offset + index) * SLIDE_IN_INTERVAL}
-              />
+              <div style={{ paddingBottom: 30 }} key={index}>
+                <ActivityItem
+                  key={index}
+                  activity={activity}
+                  delay={(offset + index) * SLIDE_IN_INTERVAL}
+                />
+              </div>
             ))}
           </div>
         );

@@ -30,7 +30,11 @@ export const ActivityComposition: React.FC<ActivityCompositionProps> = ({
   );
   // A <AbsoluteFill> is just a absolutely positioned <div>!
   return (
-    <AbsoluteFill style={{ backgroundColor: "#1D428A" }}>
+    <AbsoluteFill
+      style={{
+        backgroundColor: "#1D428A",
+      }}
+    >
       <AbsoluteFill
         style={{
           opacity,
